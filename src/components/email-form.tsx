@@ -10,7 +10,7 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '
 import { Label } from '@/components/ui/label';
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-import { CheckCircle2, PartyPopper, Copy, Check, ShieldCheck, RefreshCw, Trophy, Sparkles } from 'lucide-react';
+import { CircleCheck, PartyPopper, Copy, Check, ShieldCheck, RefreshCw, Trophy, Sparkles } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import { getFirebaseClient } from '@/lib/firebase-client';
 import { 
@@ -65,7 +65,7 @@ async function signUpClientSide(values: SignupFormValues): Promise<FormState> {
   const { auth, db } = getFirebaseClient();
 
   if (!auth || !db) {
-    return { success: false, message: "Initialization error.", timestamp: Date.now() };
+    return { success: false, message: "Firebase is currently offline. Please try again later.", timestamp: Date.now() };
   }
 
   const cleanEmail = email.trim().toLowerCase();
@@ -144,7 +144,7 @@ async function signUpClientSide(values: SignupFormValues): Promise<FormState> {
                 body: JSON.stringify({ to: cleanEmail, name: cleanName, templateId }),
             });
         } catch (apiError) {
-            console.warn(`[email-form.tsx] Welcome email delivery skipped.`, apiError);
+            console.warn(`Welcome email delivery skipped.`, apiError);
         }
     }
     
@@ -508,23 +508,6 @@ export function EmailForm() {
             </div>
           )}
         </form>
-
-        <div className="mt-8 pt-4 border-t border-border/50">
-            <Button 
-              type="button"
-              variant="ghost" 
-              size="sm"
-              className="w-full text-[10px] text-muted-foreground hover:text-primary uppercase tracking-widest font-bold opacity-30 hover:opacity-100"
-              onClick={() => setState({ 
-                success: true, 
-                message: "Congratulations! You're one of our first 100 users and get 1 month of the Sprout Plan!", 
-                referralCode: "SPROUT-PREVIEW", 
-                timestamp: Date.now() 
-              })}
-            >
-              Debug: Preview Success State
-            </Button>
-        </div>
       </Form>
     </>
   );
