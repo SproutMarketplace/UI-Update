@@ -1,8 +1,7 @@
 import Image from 'next/image';
 import { EmailForm } from '@/components/email-form';
-import { Instagram, Facebook, Twitter, CheckCircle2 } from 'lucide-react';
+import { Instagram, Facebook, Twitter, CircleCheck } from 'lucide-react';
 import Link from 'next/link';
-import placeholderImages from '@/app/lib/placeholder-images.json';
 
 export default function LandingPage() {
   const prizes = [
@@ -35,12 +34,12 @@ export default function LandingPage() {
         {/* Background Image Container */}
         <div className="absolute inset-0 z-0">
           <Image
-            src={placeholderImages.heroBackground.url}
-            alt={placeholderImages.heroBackground.alt}
+            src="/hero-bg.jpeg"
+            alt="Botanical background"
             fill
             className="object-cover"
             priority
-            data-ai-hint={placeholderImages.heroBackground.hint}
+            data-ai-hint="botanical background"
           />
           {/* Subtle overlay for text readability */}
           <div className="absolute inset-0 bg-black/45 backdrop-blur-[1px]" />
@@ -62,7 +61,7 @@ export default function LandingPage() {
         <div className="relative flex-1 flex items-center z-10 -mt-16 md:-mt-24">
           <div className="w-full max-w-7xl mx-auto px-6 py-8 grid lg:grid-cols-12 gap-12 items-center">
             
-            {/* Left Column: Branding & Value Proposition (Shifted up slightly for center alignment) */}
+            {/* Left Column: Branding & Value Proposition */}
             <div className="lg:col-span-7 space-y-8 text-white lg:-mt-10">
               <div className="space-y-6">
                 <h1 className="font-headline text-5xl md:text-7xl font-extrabold leading-[1.1] tracking-tight animate-fade-in-down">
@@ -79,11 +78,11 @@ export default function LandingPage() {
 
               <div className="grid sm:grid-cols-2 gap-4 animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
                 <div className="flex items-start gap-3 p-4 rounded-2xl bg-white/10 backdrop-blur-md border border-white/20">
-                  <CheckCircle2 className="w-6 h-6 text-[#4ade80] flex-shrink-0" />
+                  <CircleCheck className="w-6 h-6 text-[#4ade80] flex-shrink-0" />
                   <p className="text-sm font-bold uppercase tracking-wide">U.S. Only Marketplace</p>
                 </div>
                 <div className="flex items-start gap-3 p-4 rounded-2xl bg-white/10 backdrop-blur-md border border-white/20">
-                  <CheckCircle2 className="w-6 h-6 text-[#4ade80] flex-shrink-0" />
+                  <CircleCheck className="w-6 h-6 text-[#4ade80] flex-shrink-0" />
                   <p className="text-sm font-bold uppercase tracking-wide">Community to Community Sales</p>
                 </div>
               </div>
@@ -95,7 +94,7 @@ export default function LandingPage() {
                 <div className="p-8 sm:p-10">
                   <EmailForm />
                   <div className="mt-6 flex items-center justify-center gap-2 text-[10px] text-muted-foreground uppercase tracking-widest font-bold">
-                    <CheckCircle2 className="w-3 h-3 text-green-500" />
+                    <CircleCheck className="w-3 h-3 text-green-500" />
                     Secure & Private Signup
                   </div>
                 </div>
@@ -151,11 +150,11 @@ export default function LandingPage() {
             <div className="group space-y-6 p-6 rounded-[2.5rem] hover:bg-muted/50 transition-all duration-500 border border-transparent hover:border-border">
               <div className="relative aspect-[4/3] w-full overflow-hidden rounded-[2rem] shadow-md group-hover:shadow-xl transition-all duration-500">
                 <Image
-                  src={placeholderImages.featureRareDiscovery.url}
-                  alt={placeholderImages.featureRareDiscovery.alt}
+                  src="/Rare.jpeg"
+                  alt="Rare exotic plant"
                   fill
                   className="object-cover group-hover:scale-110 transition-transform duration-700"
-                  data-ai-hint={placeholderImages.featureRareDiscovery.hint}
+                  data-ai-hint="rare plant"
                 />
               </div>
               <div className="space-y-4 px-2">
@@ -169,11 +168,11 @@ export default function LandingPage() {
             <div className="group space-y-6 p-6 rounded-[2.5rem] hover:bg-muted/50 transition-all duration-500 border border-transparent hover:border-border">
               <div className="relative aspect-[4/3] w-full overflow-hidden rounded-[2rem] shadow-md group-hover:shadow-xl transition-all duration-500">
                 <Image
-                  src={placeholderImages.featureCommunity.url}
-                  alt={placeholderImages.featureCommunity.alt}
+                  src="/vibrant.jpeg"
+                  alt="Vibrant plant community"
                   fill
                   className="object-cover group-hover:scale-110 transition-transform duration-700"
-                  data-ai-hint={placeholderImages.featureCommunity.hint}
+                  data-ai-hint="plant community"
                 />
               </div>
               <div className="space-y-4 px-2">
@@ -187,11 +186,11 @@ export default function LandingPage() {
             <div className="group space-y-6 p-6 rounded-[2.5rem] hover:bg-muted/50 transition-all duration-500 border border-transparent hover:border-border">
               <div className="relative aspect-[4/3] w-full overflow-hidden rounded-[2rem] shadow-md group-hover:shadow-xl transition-all duration-500">
                 <Image
-                  src={placeholderImages.featureSellerTools.url}
-                  alt={placeholderImages.featureSellerTools.alt}
+                  src="/seller.jpeg"
+                  alt="Professional seller setup"
                   fill
                   className="object-cover group-hover:scale-110 transition-transform duration-700"
-                  data-ai-hint={placeholderImages.featureSellerTools.hint}
+                  data-ai-hint="seller tools"
                 />
               </div>
               <div className="space-y-4 px-2">
